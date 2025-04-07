@@ -1,0 +1,145 @@
+/* ================== EDUCATION SECTION ================== */
+
+html {
+  font-size: 16px;
+  height: 100%;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/static/img/background-1.jpg') center center / cover no-repeat;
+}
+
+.education-section {
+  padding: 2rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.education-section h1,
+.other-education-heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--button-bg);
+  padding-bottom: 0.3rem;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+}
+
+.other-education-heading {
+  margin-top: 4rem;
+}
+
+.education-cards,
+.experience-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .education-cards,
+  .experience-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================== SHARED CARD STYLES ================== */
+
+.education-card,
+.education-norwich-card,
+.education-sdgku-card,
+.education-jh-card {
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  z-index: 1;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.education-card:hover,
+.education-norwich-card:hover,
+.education-sdgku-card:hover,
+.education-jh-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* ================== BACKGROUND IMAGES ================== */
+
+.education-norwich-card::before {
+  background: url('/static/img/norwich.jpg') center 50% / cover no-repeat;
+}
+
+.education-sdgku-card::before {
+  background: url('/static/img/sdgku.jpg') center 5% / cover no-repeat;
+}
+
+.education-jh-card::before {
+  background: url('/static/img/jh.jpg') center 50% / cover no-repeat;
+}
+
+.education-norwich-card::before,
+.education-sdgku-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.7;
+  z-index: -1;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.education-jh-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  z-index: -1;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+
+.education-norwich-card:hover::before,
+.education-sdgku-card:hover::before,
+.education-jh-card:hover::before {
+  opacity: 1.0;
+  transform: scale(1.03);
+}
+
+/* ================== TEXT STYLES ================== */
+
+.education-card h2,
+.education-norwich-card h2,
+.education-sdgku-card h2,
+.education-jh-card h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #ffffff;
+}
+
+.education-card p,
+.education-norwich-card p,
+.education-sdgku-card p,
+.education-jh-card p {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.read-more {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: underline;
+  margin-top: auto;
+}

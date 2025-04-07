@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Koniag Experience{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/koniag.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="koniag-page">
+
+  <div class="experience-wrapper">
+    <!-- Left-side images -->
+    <div class="side-img side-img-left">
+      <img src="{% static 'img/AWS_Cloud.jpg' %}" alt="AWS Cloud">
+      <img src="{% static 'img/cft.png' %}" alt="CloudFormation">
+    </div>
+
+    <!-- Main content -->
+    <div class="experience-content">
+      <h2>Cloud Migration & Automation</h2>
+
+      <p>
+        As a Junior Cloud Software Engineer at Koniag Government Services, I’ve helped modernize legacy on-prem systems for the Navy’s meteorology and oceanography command by migrating them into the AWS cloud.
+      </p>
+
+      <p>
+        I deployed <strong>EC2 instances running RHEL 8</strong>, configured <strong>Apache</strong> and <strong>Tomcat</strong>, and migrated Java <code>.war</code> applications into the cloud environment. To streamline this, I created <strong>CloudFormation templates</strong> for spinning up EC2 environments in minutes.
+      </p>
+
+      <p>
+        I wrote <strong>Bash scripts</strong> to automate the configuration of Apache and Tomcat, and executed them using <strong>SSM Run Command</strong> for rapid, consistent deployment across multiple EC2s.
+      </p>
+
+      <p>
+        I mounted <strong>S3 buckets</strong> for shared data access, and configured a <strong>reverse proxy</strong> environment to support <strong>ArcGIS Web Adaptor, Server, and Portal</strong>. These systems were deployed with security roles and maintenance schedules tailored using <strong>SSM</strong>.
+      </p>
+
+      <p>
+        I also built <strong>synthetic canaries</strong> to test our web applications from a user perspective, ensuring core links and functionality stay live.
+      </p>
+
+      <div class="tech-used">
+        <h3>Technologies Used</h3>
+        <div class="tech-icons">
+          <span>AWS</span>
+          <span>EC2</span>
+          <span>RHEL 8</span>
+          <span>Apache</span>
+          <span>Tomcat</span>
+          <span>.war</span>
+          <span>SSM</span>
+          <span>S3</span>
+          <span>CloudFormation</span>
+          <span>Bash</span>
+          <span>Reverse Proxy</span>
+          <span>ArcGIS</span>
+          <span>Canary</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right-side images -->
+    <div class="side-img side-img-right">
+      <img src="{% static 'img/ssm.png' %}" alt="SSM">
+      <img src="{% static 'img/canary.png' %}" alt="Canary">
+    </div>
+  </div>
+
+</main>
+{% endblock %}

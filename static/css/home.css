@@ -1,0 +1,177 @@
+/*/ Body */
+
+html {
+  font-size: 16px;
+  height: 100%;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/static/img/background-1.jpg') center center / cover no-repeat;
+}
+
+.profile-header h1,
+.profile-header h2,
+.profile-header p,
+.skills-section h3,
+.skill-boxes span {
+  color: var(--text-color);
+}
+
+@media (min-width: 1025px) {
+  .profile-section {
+    display: flex;
+    width: 100%;
+    height: 65vh;
+  }
+
+  .profile-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-image img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--button-bg);
+  }
+
+  .profile-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0rem 8rem;
+    color: var(--text-color);
+  }
+
+  .profile-header {
+    align-self: flex-start;
+  }
+
+  .profile-header h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .profile-header h2 {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .profile-header p {
+    font-size: 0.755rem;
+    margin-top: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .skills-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .skills-section h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .skill-boxes span {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--button-bg);
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    cursor: default;
+  }
+}
+
+
+/* ===== Section Styling for About, Projects, Experience, Contact ===== */
+
+.page-section {
+  padding: 2rem 1.5rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: rgba(21, 46, 80, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+section h1 {
+  font-size: 1.75rem;
+  border-bottom: 2px solid var(--button-bg);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.page-section p, .page-section li {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.page-section ul {
+  padding-left: 1.5rem;
+}
+
+.page-section li::marker {
+  color: var(--button-bg);
+}
+
+.nav-options a {
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--button-bg);
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.nav-options a:hover {
+  background-color: var(--text-color);
+  color: var(--button-bg);
+  border-color: var(--text-color);
+}
+
+.link-button {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  border: 1.5px solid var(--button-bg);
+  border-radius: 3px;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.link-button:hover {
+  background-color: var(--text-color);
+  color: var(--button-bg);
+  border-color: var(--text-color);
+}

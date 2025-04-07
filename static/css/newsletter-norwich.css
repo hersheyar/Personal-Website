@@ -1,0 +1,104 @@
+/* Background for the entire page */
+html {
+  background: linear-gradient(rgba(21, 46, 80, 0.85), rgba(21, 46, 80, 0.85)),
+              url('/static/img/norwichwebpage.jpg') center top / cover no-repeat fixed;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main content layout */
+.norwich-page {
+  padding: 3rem 1rem;
+  min-height: 100vh;
+}
+
+/* Header & Title Block */
+.norwich-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.grad-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.title-block {
+  flex: 1;
+}
+
+.norwich-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Subheading & Icon */
+.norwich-subheading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.icon-img {
+  width: 40px;
+  height: 40px;
+}
+
+.norwich-heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 2px solid #3d6cac;
+  padding-bottom: 0.4rem;
+  margin: 2rem 0 2rem;
+}
+
+/* Course cards */
+.norwich-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.course-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.course-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #20435c;
+  margin: 0;
+}
+
+/* Optional: if you keep the footer image later */
+.norwich-footer-img {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.norwich-web-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #3d6cac;
+}

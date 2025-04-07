@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Norwich Coursework{% endblock %}
+{% block body_class %}norwich-background{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/newsletter-norwich.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="norwich-page">
+
+  <!-- Top section with personal image and title -->
+  <div class="norwich-header">
+    <img src="{% static 'img/personalpic.JPG' %}" alt="Graduation Photo" class="grad-photo">
+    <div class="title-block">
+      <h1 class="norwich-title">Bachelor of Science in Computer Science and Information Systems</h1>
+    </div>
+  </div>
+
+  <!-- Subheading with icon -->
+  <div class="norwich-subheading">
+    <img src="{% static 'img/norwich_icon.png' %}" alt="Norwich Icon" class="icon-img">
+    <h2 class="norwich-heading">List of Relevant Courses</h2>
+  </div>
+
+  <!-- Course Grid -->
+  <div class="norwich-container">
+    <div class="course-card"><p class="course-title">Intro to Computer Programming</p></div>
+    <div class="course-card"><p class="course-title">Comp Programming w/ High-Level Language</p></div>
+    <div class="course-card"><p class="course-title">Comp Programming w/ Low-Level Language</p></div>
+    <div class="course-card"><p class="course-title">Intro to Data Structures</p></div>
+    <div class="course-card"><p class="course-title">Operating Systems & Parallelism</p></div>
+    <div class="course-card"><p class="course-title">Applied Calculus</p></div>
+    <div class="course-card"><p class="course-title">Elementary Statistics</p></div>
+    <div class="course-card"><p class="course-title">Computer Architecture & Reverse Engineering</p></div>
+    <div class="course-card"><p class="course-title">Relational Databases & SQL</p></div>
+    <div class="course-card"><p class="course-title">Fundamentals of Digital Design</p></div>
+    <div class="course-card"><p class="course-title">Embedded Systems</p></div>
+    <div class="course-card"><p class="course-title">Discrete Mathematics</p></div>
+    <div class="course-card"><p class="course-title">Theory of Computation</p></div>
+    <div class="course-card"><p class="course-title">Computer Science & Info Systems Capstone</p></div>
+  </div>
+
+</main>
+{% endblock %}

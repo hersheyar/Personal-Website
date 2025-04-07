@@ -1,0 +1,75 @@
+:root {
+  --background-color: #152E50;
+  --navbar-bg: #555555;
+  --button-bg: #3d6cac;
+  --text-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100px;
+  padding: 0 1rem;
+  background: transparent;
+}
+
+@media (min-width: 640px) {
+  #menu-toggle {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+}
+
+
+.header-left-side,
+.header-right-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header-left-side {
+  justify-content: flex-start;
+}
+
+.header-right-side {
+  justify-content: flex-end;
+}
+
+.nav-options {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1;
+  gap: 1.5rem;
+}
+
+.nav-options a {
+  text-decoration: none;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--button-bg);
+  border-radius: 3px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.nav-options a:hover {
+  background-color: var(--text-color);
+  color: var(--button-bg);
+  border-color: var(--text-color);
+}

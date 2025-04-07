@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - Portfolio{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+  <section class="profile-section">
+    <div class="profile-image">
+      <img src="{% static 'img/personalpic.JPG' %}" alt="Andrew Hershey pic" />
+    </div>
+
+    <div class="profile-text">
+      <div class="profile-header">
+        <h1>Andrew Hershey</h1>
+        <h2>Cloud Software Engineer</h2>
+        <p>
+          I'm a U.S. Cloud Software Engineer currently supporting cloud migration projects. With experience in scientific data processing
+          and full-stack development, I try to combine technical skills with hands-on knowledge to build efficient,
+          scalable, and secure systems in the cloud. I have a bachelor's degree in Computer Science and Information Systems,
+          and plan on earning AWS certifications before starting my master's in Information Systems Engineering
+          at Johns Hopkins Whiting School of Engineering after the summer to expand my ability to architect complex, intelligent systems. I am also a U.S. Navy veteran.
+        </p>
+         <div class="skill-boxes">
+          <a href="{% static 'files/andrew_hershey_resume.pdf' %}" download class="link-button">Download Resume</a>
+          <a href="https://linkedin.com/in/andrew-hershey-dev" target="_blank" class="link-button">LinkedIn Profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills-section">
+    <h3>Skills</h3>
+    <div class="skill-boxes">
+      <span>AWS</span>
+      <span>Linux</span>
+      <span>Python</span>
+      <span>HTML</span>
+      <span>JavaScript</span>
+    </div>
+  </section>
+</main>
+{% endblock %}

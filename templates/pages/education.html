@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Education{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/education.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+  <section class="education-section">
+    <h1>Education</h1>
+    <div class="education-cards">
+
+      <a href="{% url 'education_detail' 'norwich-university' %}" class="education-norwich-card">
+        <h2>Norwich University</h2>
+        <p><em>B.S in Computer Science & Information Systems – GPA: 3.8/4.0</em></p>
+        <p class="read-more">Click to read more</p>
+      </a>
+
+      <a href="{% url 'education_detail' 'global-knowledge-university' %}" class="education-sdgku-card">
+        <h2>San Diego Global Knowledge University</h2>
+        <p><em>Full-Stack Development Certification – GPA: 4.0/4.0 (10/2024–05/2025)</em></p>
+        <p class="read-more">Click to read more</p>
+      </a>
+
+    </div>
+
+    <h2 class="other-education-heading">In Progress Education</h2>
+    <div class="education-cards">
+      <a href="{% url 'education_detail' 'info-systems-engineering' %}" class="education-jh-card">
+        <h2>Johns Hopkins Whiting School of Engineering</h2>
+        <p><em>Masters in Information Systems Engineering</em></p>
+        <p class="read-more">Click to read more</p>
+      </a>
+    </div>
+  </section>
+</main>
+{% endblock %}
