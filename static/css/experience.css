@@ -1,7 +1,5 @@
 /* ================== EXPERIENCE SECTION ================== */
-
-html {
-  font-size: 16px;
+html, main {
   height: 100%;
   background:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -58,7 +56,6 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.75rem;
   z-index: 1;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -119,7 +116,7 @@ html {
 .experience-aws-card h2,
 .experience-dev-card h2,
 .experience-navy-card h2 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin: 0;
   color: #ffffff;
 }
@@ -129,7 +126,7 @@ html {
 .experience-aws-card p,
 .experience-dev-card p,
 .experience-navy-card p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #ffffff;
   margin: 0 0 0.5rem 0;
 }
