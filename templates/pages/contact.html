@@ -6,13 +6,28 @@
   <link rel="stylesheet" href="{% static 'css/contact.css' %}">
 {% endblock %}
 {% block content %}
-<main>
-  <section class="page-section">
+<section class="contact-section center-colum"> 
     <h1>Contact Me</h1>
-    <p><strong>Email:</strong> <a href="mailto:Hersheyar@outlook.com">Hersheyar@outlook.com</a></p>
-    <p><strong>Phone:</strong> 619-339-3489</p>
-    <p><strong>Location:</strong> Stennis Space Center, MS</p>
-    <p>I’m always open to new opportunities, freelance work, or collaboration. Feel free to reach out!</p>
-  </section>
-</main>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label>Name</label>
+            {{ form.name }}
+        </div>
+
+        <div>
+                 <label>Email</label>
+            {{ form.email }}
+        </div>
+        
+        <div>
+            <label>Message</label>
+            {{ form.message }}
+            <br />
+        </div>
+        
+        <button type="submit">Send Message</button>
+    </form>
+</section>
 {% endblock %}

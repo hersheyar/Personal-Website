@@ -10,63 +10,72 @@
 {% block content %}
 <main class="koniag-page">
 
-  <div class="experience-wrapper">
-    <!-- Left-side images -->
-    <div class="side-img side-img-left">
-      <img src="{% static 'img/AWS_Cloud.jpg' %}" alt="AWS Cloud">
-      <img src="{% static 'img/cft.png' %}" alt="CloudFormation">
-    </div>
-
-    <!-- Main content -->
-    <div class="experience-content">
-      <h2>Cloud Migration & Automation</h2>
-
-      <p>
-        As a Junior Cloud Software Engineer at Koniag Government Services, I’ve helped modernize legacy on-prem systems for the Navy’s meteorology and oceanography command by migrating them into the AWS cloud.
-      </p>
-
-      <p>
-        I deployed <strong>EC2 instances running RHEL 8</strong>, configured <strong>Apache</strong> and <strong>Tomcat</strong>, and migrated Java <code>.war</code> applications into the cloud environment. To streamline this, I created <strong>CloudFormation templates</strong> for spinning up EC2 environments in minutes.
-      </p>
-
-      <p>
-        I wrote <strong>Bash scripts</strong> to automate the configuration of Apache and Tomcat, and executed them using <strong>SSM Run Command</strong> for rapid, consistent deployment across multiple EC2s.
-      </p>
-
-      <p>
-        I mounted <strong>S3 buckets</strong> for shared data access, and configured a <strong>reverse proxy</strong> environment to support <strong>ArcGIS Web Adaptor, Server, and Portal</strong>. These systems were deployed with security roles and maintenance schedules tailored using <strong>SSM</strong>.
-      </p>
-
-      <p>
-        I also built <strong>synthetic canaries</strong> to test our web applications from a user perspective, ensuring core links and functionality stay live.
-      </p>
-
-      <div class="tech-used">
-        <h3>Technologies Used</h3>
-        <div class="tech-icons">
-          <span>AWS</span>
-          <span>EC2</span>
-          <span>RHEL 8</span>
-          <span>Apache</span>
-          <span>Tomcat</span>
-          <span>.war</span>
-          <span>SSM</span>
-          <span>S3</span>
-          <span>CloudFormation</span>
-          <span>Bash</span>
-          <span>Reverse Proxy</span>
-          <span>ArcGIS</span>
-          <span>Canary</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right-side images -->
-    <div class="side-img side-img-right">
-      <img src="{% static 'img/ssm.png' %}" alt="SSM">
-      <img src="{% static 'img/canary.png' %}" alt="Canary">
+  <!-- Top header section -->
+  <div class="koniag-header">
+    <div class="title-block">
+      <h1 class="koniag-title">Junior Cloud Software Engineer</h1>
     </div>
   </div>
 
+  <!-- Code Snippets -->
+  <div class="code-snippet code-left">
+    <span class="comment"># install aws cli and ssm agent</span>
+    <br><span class="keyword">sudo</span> yum update -y
+    <br><span class="keyword">sudo</span> yum install awscli -y
+    <br><span class="keyword">sudo</span> yum install -y amazon-ssm-agent
+    <br><span class="keyword">sudo</span> systemctl enable amazon-ssm-agent
+    <br><span class="keyword">sudo</span> systemctl start amazon-ssm-agent
+  </div>
+
+  <div class="code-snippet code-canary">
+    <span class="comment">// Synthetic Canary Example</span>
+    <br><span class="keyword">const</span> synthetics = <span class="function">require</span>(<span class="string">'Synthetics'</span>);
+    <br><span class="keyword">const</span> log = <span class="function">require</span>(<span class="string">'SyntheticsLogger'</span>);
+    <br><br><span class="function">exports.handler</span> = <span class="keyword">async</span> () => {
+    <br>&nbsp;&nbsp;<span class="keyword">let</span> url = <span class="string">'https://example.com'</span>;
+    <br>&nbsp;&nbsp;<span class="keyword">let</span> page = <span class="keyword">await</span> synthetics.getPage();
+    <br>&nbsp;&nbsp;<span class="keyword">await</span> page.goto(url, { waitUntil: <span class="string">'load'</span>, timeout: 30000 });
+    <br>&nbsp;&nbsp;<span class="function">log.info</span>(<span class="string">'Page loaded!'</span>);
+    <br>};
+  </div>
+
+  <div class="code-snippet code-right">
+    <span class="comment"># CloudFormation snippet</span>
+    <br><span class="keyword">Resources:</span>
+    <br>&nbsp;&nbsp;<span class="variable">MyInstance:</span>
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Type:</span> <span class="string">"AWS::EC2::Instance"</span>
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Properties:</span>
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">ImageId:</span> <span class="string">"ami-123456"</span>
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">InstanceType:</span> <span class="string">"t3.micro"</span>
+  </div>
+
+  <!-- Experience content with paragraph box -->
+  <div class="experience-content">
+    <div class="paragraph-box">
+      <p>At Koniag Government Services, I stepped into the world of cloud engineering by helping the Navy's meteorology and oceanography command migrate systems from on-prem infrastructure to AWS.</p>
+      <p>It was a steep learning curve at first and there was a lot to take in, breaking down the entire system, its parts and reworking it to fit in an AWS Cloud environment.</p>
+      <p>I got hands-on experience configuring <strong>RHEL 8 EC2 instances</strong>, installing <strong>Tomcat</strong> and <strong>Apache</strong>, and deploying <code>.war</code> Java applications into them. I built <strong>CloudFormation templates</strong> and created AMIs for custom backups.</p>
+      <p>I leaned into automation with <strong>Bash scripts</strong> that installed AWS CLI, configured <strong>SSM agents</strong>, and ran setup tasks across EC2s with <strong>SSM Run Command</strong>.</p>
+      <p>I also mounted <strong>S3 buckets</strong> and configured a <strong>reverse proxy</strong> for the <strong>ArcGIS stack</strong> (Web Adaptor, Server, and Portal) with proper IAM roles and maintenance windows.</p>
+      <p>I worked with <strong>synthetic canary testing</strong> to simulate user behavior and ensure our web apps stayed functional and responsive.</p>
+      <p>Next, we’re exploring containerization with <strong>Docker</strong> or <strong>Kubernetes</strong> and expanding canary monitoring for deeper insights. I plan on updating as we go!</p>
+    </div>
+
+    <div class="tech-used">
+      <h3 class="tech-heading">Technologies Used</h3>
+      <div class="tech-icons">
+        <span>AWS</span>
+        <span>EC2</span>
+        <span>RHEL 8</span>
+        <span>Apache</span>
+        <span>Tomcat</span>
+        <span>S3</span>
+        <span>CloudFormation</span>
+        <span>Bash</span>
+        <span>ArcGIS</span>
+        <span>Canary</span>
+      </div>
+    </div>
+  </div>
 </main>
 {% endblock %}

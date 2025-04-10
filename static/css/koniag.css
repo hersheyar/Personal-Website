@@ -1,97 +1,113 @@
-html {
-  background-color: black;
-  color: var(--text-color);
+html, body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(rgba(40, 51, 78, 0.85), rgba(90, 111, 140, 0.85)),
+              url('/static/img/techimg.jpg') center top / cover no-repeat fixed;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+body {
+  min-height: 100vh;
 }
 
 .koniag-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  color: var(--text-color);
-  background-color: black;
-  margin: 0;
-}
-
-/* Main layout wrapper */
-.experience-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-/* Side image containers */
-.side-img {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 900px) 1fr;
   gap: 1rem;
-  flex-shrink: 0;
+  padding: 2rem 0;
+  min-height: 100vh;
+  position: relative;
+  overflow: visible;
 }
 
-/* Default image style */
-.side-img img {
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid #3d6cac;
-  background-color: #ffffff;
+/* Centered header with underline */
+.koniag-header {
+  grid-column: 2;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-/* =============================== */
-/* 🎯 Individually sized images */
-/* =============================== */
-
-/* Left images */
-.side-img-left img:nth-child(1) {
-  width: 150px;
-  height: 150px;
+.koniag-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 auto;
+  display: inline-block;
+  border-bottom: 2px solid #3d6cac;
+  padding-bottom: 0.4rem;
 }
 
-.side-img-left img:nth-child(2) {
-  width: 100px;
-}
-
-/* Right images */
-.side-img-right img:nth-child(1) {
-  width: 200px;
-  height: auto;
-}
-
-.side-img-right img:nth-child(2) {
-  width: 120px;
-  height: auto;
-}
-
-/* Main content area */
+/* Main content */
 .experience-content {
-  flex: 1;
-  min-width: 300px;
+  grid-column: 2;
+  z-index: 2;
+  padding: 0 1.75rem;
 }
 
-.experience-content h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+.paragraph-box {
+  border: 2px solid #3d6cac;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
 }
 
-.experience-content p {
+.paragraph-box p {
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 1rem;
-  color: var(--text-color);
 }
 
-/* Tech tags */
+/* Code snippets */
+.code-snippet {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  white-space: pre;
+  z-index: 1;
+  pointer-events: none;
+  line-height: 1.5;
+  opacity: 0.9;
+  max-width: 300px;
+}
+
+.code-left {
+  left: .3rem;
+  top: 16%;
+}
+
+.code-right {
+  right: 3.5rem;
+  top: 28%;
+}
+
+.code-canary {
+  top: 48%;
+  left: .3rem;
+}
+
+/* Code syntax colors */
+.keyword  { color: #cc99cd; }
+.string   { color: #7ec699; }
+.variable { color: #f99157; }
+.function { color: #6699cc; }
+.comment  { color: #999; font-style: italic; }
+
+/* Tech section */
 .tech-used {
   margin-top: 2rem;
   text-align: center;
 }
 
-.tech-used h3 {
+.tech-heading {
   font-size: 1.25rem;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  border-bottom: 2px solid #3d6cac;
+  padding-bottom: 0.4rem;
+  display: inline-block;
+  color: #ffffff;
 }
 
 .tech-icons {
@@ -99,6 +115,7 @@ html {
   gap: 0.75rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .tech-icons span {
@@ -110,23 +127,8 @@ html {
   font-weight: bold;
 }
 
-/* =============================== */
-/* Responsive Tweaks (Optional) */
-/* =============================== */
-@media (max-width: 768px) {
-  .side-img {
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .side-img img {
-    width: 100px !important;
-    height: auto;
-  }
-
-  .experience-content {
-    flex-basis: 100%;
+@media (max-width: 1000px) {
+  .code-snippet {
+    display: none;
   }
 }
