@@ -1,11 +1,12 @@
 /*/ Body */
 
-html {
+html, main {
   font-size: 16px;
   height: 100%;
   background:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/static/img/background-1.jpg') center center / cover no-repeat;
+    url('/static/img/background-1.jpg') center center / cover no-repeat fixed;
+  background-attachment: fixed;
 }
 
 .profile-header h1,
@@ -35,7 +36,7 @@ html {
     height: 350px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid var(--button-bg);
+    border: 4px solid #102e59;
   }
 
   .profile-text {
@@ -67,6 +68,26 @@ html {
     line-height: 1.6;
   }
 
+  .collapsible-header {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+  }
+
+  .collapsible-header:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--button-bg);
+  }
+
+  .collapsible-header span {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .collapsible-header:hover span {
+    color: var(--button-bg);
+    transform: scale(1.2);
+  }
+
   .skills-section {
     display: flex;
     flex-direction: column;
@@ -76,29 +97,49 @@ html {
     margin-top: 1rem;
   }
 
+  .skills-section h2 {
+    border-bottom: 2px solid var(--button-bg)
+  }
+
   .skills-section h3 {
     font-size: 1rem;
     margin-bottom: 1rem;
   }
 
-  .skill-boxes {
+  .skill-grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    justify-content: center;
+    flex-direction: column;
+    gap: .5rem;
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
   }
 
-  .skill-boxes span {
-    background-color: var(--button-bg);
+  .skill-row {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent black */
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     color: var(--text-color);
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--button-bg);
-    border-radius: 3px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    cursor: default;
+    backdrop-filter: blur(4px);
+    border: 1px solid #8c8b8b;
   }
+
+  .skill-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+    align-self: center;
+    color: var(--text-color);
+  }
+
+  .skill-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
 
   .profile-header .link-boxes {
     margin-top: 1rem;
@@ -184,3 +225,5 @@ section h1 {
   color: var(--button-bg);
   border-color: var(--text-color);
 }
+
+

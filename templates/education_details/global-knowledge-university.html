@@ -1,1 +1,41 @@
-<h1>helo</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Full Stack Project - Global Knowledge University{% endblock %}
+{% block body_class %}sdgku-background{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/sdgku.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="sdgku-page">
+  <!-- Header Section -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="{% static 'img/fullstack.webm' %}" type="video/webm">
+  </video>
+  <div class="sdgku-header">
+    <h1 class="sdgku-title">Full Stack Development</h1>
+  </div>
+  <div class="sdgku-subheading">
+      <img src="{% static 'img/sdgku icon.jpg' %}" alt="SDGKU Icon" class="icon-img">
+      <h2 class="sdgku-heading">Technologies used</h2>
+  </div>
+  <!-- Technologies Used Section -->
+  <div class="sdgku-container">
+    <div class="tech-card"><p class="tech-title">HTML</p></div>
+    <div class="tech-card"><p class="tech-title">CSS</p></div>
+    <div class="tech-card"><p class="tech-title">JavaScript</p></div>
+    <div class="tech-card"><p class="tech-title">Django</p></div>
+    <div class="tech-card"><p class="tech-title">Python</p></div>
+    <div class="tech-card"><p class="tech-title">React</p></div>
+    <div class="tech-card"><p class="tech-title">Node.js</p></div>
+    <div class="tech-card"><p class="tech-title">Git & GitHub</p></div>
+    <div class="tech-card"><p class="tech-title">Agile & Scrum</p></div>
+  </div>
+
+  <div class="sdgku-blurb">
+      <p>We covered many topics and created many project with many technologies. My final project is actually this website you are looking at!!</p>
+  </div>
+</main>
+{% endblock %}

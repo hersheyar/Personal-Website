@@ -1,7 +1,6 @@
 :root {
-  --background-color: #152E50;
   --navbar-bg: #555555;
-  --button-bg: #3d6cac;
+  --button-bg: #7e0000;
   --text-color: #ffffff;
 }
 
@@ -49,7 +48,7 @@ body {
 
 .nav-options {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex: 1;
   gap: 1.5rem;
 }

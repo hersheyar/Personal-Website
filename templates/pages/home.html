@@ -4,7 +4,8 @@
 {% block title %}Home - Portfolio{% endblock %}
 
 {% block extra_head %}
-  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script src="{% static 'js/home.js' %}" defer></script>
 {% endblock %}
 
 {% block content %}
@@ -26,7 +27,6 @@
           at Johns Hopkins Whiting School of Engineering after the summer to expand my ability to architect complex, intelligent systems. I am also a U.S. Navy veteran.
         </p>
          <div class="link-boxes">
-          <a href="{% static 'files/andrew_hershey_resume.pdf' %}" download class="link-button">Download Resume</a>
           <a href="https://linkedin.com/in/andrew-hershey-dev" target="_blank" class="link-button">LinkedIn Profile</a>
         </div>
       </div>
@@ -34,14 +34,43 @@
   </section>
 
   <section class="skills-section">
-    <h3>Skills</h3>
-    <div class="skill-boxes">
-      <span>AWS</span>
-      <span>Linux</span>
-      <span>Python</span>
-      <span>HTML</span>
-      <span>JavaScript</span>
-    </div>
-  </section>
+    <h2 id="skills-toggle" class="collapsible-header">
+        <span>▾</span> Want to know how I created and deployed this site?
+    </h2>
+    <div class="skill-grid">
+        <div class="skill-row">
+            <div class="skill-title">AWS</div>
+            <div class="skill-desc">Used AWS for hosting and managing infrastructure, including EC2 for compute, ECR for container images, and associated networking and IAM configurations.</div>
+        </div>
+        <div class="skill-row">
+            <div class="skill-title">Linux</div>
+            <div class="skill-desc">Deployed the application on Amazon EC2 instances running Linux-based operating systems.</div>
+        </div>
+        <div class="skill-row">
+            <div class="skill-title">Docker</div>
+            <div class="skill-desc">Containerized the Django application using Docker, creating reusable and consistent environments for deployments.</div>
+        </div>
+        <div class="skill-row">
+            <div class="skill-title">Terraform</div>
+            <div class="skill-desc">Used Terraform to provision AWS infrastructure as code — including VPCs, subnets, EC2 instances, security groups, and other managed services.</div>
+        </div>
+        <div class="skill-row">
+            <div class="skill-title">Django</div>
+            <div class="skill-desc">Built the backend of the application using Django (a Python framework), implementing the core logic.</div>
+        </div>
+        <div class="skill-row">
+            <div class="skill-title">HTML</div>
+            <div class="skill-desc">Structured the frontend layout using HTML, providing the base for rendering content and user interface components.</div>
+        </div>
+        <div class="skill-row">
+            <div class="skill-title">CSS</div>
+            <div class="skill-desc">Styled the application using CSS to create a user-friendly interface.</div>
+        </div>
+        <div class="skill-row">
+            <div class="skill-title">JavaScript</div>
+            <div class="skill-desc">I used this for the dropdown carrot you just used and that is it.</div>
+        </div>
+     </div>
+    </section>
 </main>
 {% endblock %}

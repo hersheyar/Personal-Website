@@ -92,7 +92,7 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.7;
+  opacity: 0.6;
   z-index: -1;
   transition: opacity 0.2s ease, transform 0.2s ease;
   pointer-events: none;
@@ -102,7 +102,7 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.5;
+  opacity: 0.4;
   z-index: -1;
   transition: opacity 0.2s ease, transform 0.2s ease;
   pointer-events: none;
@@ -110,7 +110,10 @@ html {
 
 
 .education-norwich-card:hover::before,
-.education-sdgku-card:hover::before,
+.education-sdgku-card:hover::before {
+  opacity: 1.0;
+  transform: scale(1.03);
+}
 .education-jh-card:hover::before {
   opacity: 1.0;
   transform: scale(1.03);
@@ -122,7 +125,7 @@ html {
 .education-norwich-card h2,
 .education-sdgku-card h2,
 .education-jh-card h2 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin: 0;
   color: #ffffff;
 }
@@ -131,7 +134,8 @@ html {
 .education-norwich-card p,
 .education-sdgku-card p,
 .education-jh-card p {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: bold;
   color: #ffffff;
   margin: 0 0 0.5rem 0;
 }

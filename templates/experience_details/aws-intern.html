@@ -1,1 +1,40 @@
-<h1>hello</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}AWS Internship - Amazon Web Services{% endblock %}
+{% block body_class %}aws-background{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/aws-intern.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="aws-page">
+  <div class="aws-header">
+    <h1 class="aws-title">Software Development Engineer Intern</h1>
+    <h2 class="aws-subtitle">Amazon Web Services (AWS) · Seattle, WA · Summer 2023</h2>
+  </div>
+
+  <div class="experience-content">
+    <div class="paragraph-box">
+      <p>I interned at Amazon Web Services (AWS) during Summer 2023 as a Software Development Engineer Intern. I worked on the Qraken project, a query-driven ticketing system used for internal issue tracking and automation workflows.</p>
+      <p>My primary contribution was developing backend Kotlin code and integrating several AWS services to automate and streamline query execution. I designed and configured AWS Step Functions for orchestration, and used Lambda to handle logic.</p>
+      <p>I also implemented EventBridge cron rules to trigger Lambdas for scheduled queries and used DynamoDB for data. Query execution was offloaded to Athena, and results stored in S3.</p>
+      <p>This internship was very fast-paced I really enjoyed learning and getting that opportunity. It gave me a great first exposure to AWS.</p>
+    </div>
+
+    <div class="tech-used">
+      <h3 class="tech-heading">Technologies Used</h3>
+      <div class="tech-icons">
+        <span>Kotlin</span>
+        <span>AWS Lambda</span>
+        <span>AWS EventBridge</span>
+        <span>AWS Step Functions</span>
+        <span>AWS DynamoDB</span>
+        <span>Amazon Athena</span>
+        <span>S3</span>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

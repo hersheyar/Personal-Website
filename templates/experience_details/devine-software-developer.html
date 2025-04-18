@@ -1,1 +1,43 @@
-<h1>Hello</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Devine Consulting Experience{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/devine-software-developer.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="devine-page">
+
+  <div class="devine-header">
+    <h1 class="devine-title">Scientific Software Developer</h1>
+    <h2 class="devine-subtitle">Devine Consulting · Stennis Space Center, MS · 09/2023 – 09/2024</h2>
+  </div>
+
+
+
+  <div class="experience-content">
+    <div class="paragraph-box">
+      <p>At Devine Consulting, I developed automating tools for processing environmental data sets. My work focused on building Python-based pipelines to handle large collections of <strong>NetCDF</strong> files, transforming raw model output into usable formats for end users.</p>
+      
+      <p>I integrated <strong>existing shell scripts</strong> into the workflow and extended them with custom Python logic, ensuring accurate file conversions and metadata consistency. I also implemented automation around file movement, renaming, and transformation, making the overall process reproducible and maintainable.</p>
+
+      <p>These workflows were designed to run on a recurring schedule, and I worked closely with <strong>CRON jobs</strong> and structured logging to ensure successful execution and rapid debugging when needed.</p>
+      
+      <p>I documented the system end-to-end for handoff, making it easy for future developers or analysts to reconfigure, rerun, or expand the workflow.</p>
+    </div>
+
+    <div class="tech-used">
+      <h3 class="tech-heading">Technologies Used</h3>
+      <div class="tech-icons">
+        <span>Python</span>
+        <span>NetCDF</span>
+        <span>Shell Scripts</span>
+        <span>Cron</span>
+        <span>CLI</span>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

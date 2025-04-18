@@ -127,6 +127,7 @@ html, main {
 .experience-dev-card p,
 .experience-navy-card p {
   font-size: 1rem;
+  font-weight: bold;
   color: #ffffff;
   margin: 0 0 0.5rem 0;
 }

@@ -1,8 +1,10 @@
+
+
 /* Background for the entire page */
 html {
   background: linear-gradient(rgba(21, 46, 80, 0.85), rgba(21, 46, 80, 0.85)),
               url('/static/img/norwichwebpage.jpg') center top / cover no-repeat fixed;
-  color: #ffffff;
+  color: var(--text-color);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -15,8 +17,8 @@ html {
 /* Header & Title Block */
 .norwich-header {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  text-align: center;
   margin-bottom: 2rem;
 }
 
@@ -24,18 +26,21 @@ html {
   width: 150px;
   height: 150px;
   object-fit: cover;
-}
-
-.title-block {
-  flex: 1;
+  border-radius: 50%;
+  border: 3px solid var(--button-bg);
 }
 
 .norwich-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-color);
   margin: 0;
 }
+
+.title-block {
+  max-width: 1000px;
+}
+
 
 /* Subheading & Icon */
 .norwich-subheading {
@@ -54,9 +59,9 @@ html {
 .norwich-heading {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-color);
   text-align: center;
-  border-bottom: 2px solid #3d6cac;
+  border-bottom: 2px solid var(--button-bg);
   padding-bottom: 0.4rem;
   margin: 2rem 0 2rem;
 }
@@ -71,26 +76,37 @@ html {
 }
 
 .course-card {
-  background-color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    rgba(98, 179, 226, 0.25),
+    rgba(115, 99, 223, 0.25),
+    rgba(145, 239, 255, 0.25),
+    rgba(215, 152, 255, 0.25)
+  );
+  backdrop-filter: blur(6px);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   padding: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .course-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .course-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #20435c;
+  color: #ffffff;
   margin: 0;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Optional: if you keep the footer image later */
+/* Footer image (optional) */
 .norwich-footer-img {
   margin-top: 3rem;
   text-align: center;
