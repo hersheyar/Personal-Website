@@ -48,7 +48,7 @@ html, body {
   border-radius: 12px;
   max-width: 900px;
   margin-bottom: 2rem;
-  border: 2px solid var(--button-bg);
+  border: 2px solid white;
 }
 
 .paragraph-box p {

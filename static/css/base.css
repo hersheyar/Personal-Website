@@ -1,6 +1,6 @@
 :root {
   --navbar-bg: #555555;
-  --button-bg: #7e0000;
+  --button-bg: #9f1414;
   --text-color: #ffffff;
 }
 
@@ -12,7 +12,6 @@ body {
 .navbar {
   position: relative;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   height: 100px;
   padding: 0 1rem;
@@ -48,9 +47,9 @@ body {
 
 .nav-options {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex: 1;
-  gap: 1.5rem;
+  gap: .5rem;
 }
 
 .nav-options a {

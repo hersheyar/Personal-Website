@@ -210,9 +210,9 @@ section h1 {
 .link-button {
   font-size: 0.75rem;
   padding: 0.3rem 0.75rem;
-  border: 1.5px solid var(--button-bg);
+  border: 1.5px solid #194885;
   border-radius: 3px;
-  background-color: var(--button-bg);
+  background-color: #194885;
   color: var(--text-color);
   font-weight: bold;
   text-decoration: none;
@@ -222,7 +222,7 @@ section h1 {
 
 .link-button:hover {
   background-color: var(--text-color);
-  color: var(--button-bg);
+  color: #194885;
   border-color: var(--text-color);
 }
 
