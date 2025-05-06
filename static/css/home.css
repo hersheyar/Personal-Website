@@ -40,16 +40,21 @@ html, main {
   }
 
   .profile-text {
-    width: 50%;
+    width: 65%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     padding: 0rem 8rem;
     color: var(--text-color);
+    padding-left: 0px;
   }
 
   .profile-header {
     align-self: flex-start;
+    border: 2px solid #808080;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
   }
 
   .profile-header h1 {
@@ -63,7 +68,7 @@ html, main {
   }
 
   .profile-header p {
-    font-size: 0.955rem;
+    font-size: 1rem;
     margin-top: 0.5rem;
     line-height: 1.6;
   }

@@ -92,7 +92,7 @@ body {
 }
 
 .tech-icons span {
-  background-color: var(--button-bg);
+  background-color:#ff9900;
   color: #ffffff;
   padding: 0.4rem 0.75rem;
   border-radius: 5px;

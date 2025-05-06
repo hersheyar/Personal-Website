@@ -43,7 +43,7 @@ html, body {
 }
 
 .paragraph-box {
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, .7);
   padding: 2rem;
   border-radius: 12px;
   max-width: 900px;
@@ -77,7 +77,7 @@ html, body {
 }
 
 .tech-icons span {
-  background-color: var(--button-bg);;
+  background-color: rgb(55, 2, 225);
   color: #ffffff;
   padding: 0.4rem 1rem;
   border-radius: 6px;

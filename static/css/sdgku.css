@@ -99,19 +99,6 @@ html {
   color: #ffffff;
 }
 
-.sdgku-blurb {
-  margin-top: 3rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 1.5rem 2rem;
-  border-radius: 10px;
-  text-align: center;
-  color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.6;
-}
 
 /* Optional: decorative background images */
 .tech-images {

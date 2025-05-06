@@ -124,7 +124,7 @@ body {
 }
 
 .tech-icons span {
-  background-color: var(--button-bg);
+  background-color: rgba(38, 83, 151);
   color: #ffffff;
   padding: 0.4rem 0.75rem;
   border-radius: 5px;

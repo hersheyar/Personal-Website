@@ -24,7 +24,7 @@
           and full-stack development, I try to combine technical skills with hands-on knowledge to build efficient,
           scalable, and secure systems in the cloud. I have a bachelor's degree in Computer Science and Information Systems,
           and plan on earning AWS certifications before starting my master's in Information Systems Engineering
-          at Johns Hopkins Whiting School of Engineering after the summer to expand my ability to architect complex, intelligent systems. I am also a U.S. Navy veteran.
+          at Johns Hopkins Whiting School of Engineering. I am also a U.S. Navy veteran.
         </p>
          <div class="link-boxes">
           <a href="https://linkedin.com/in/andrew-hershey-dev" target="_blank" class="link-button">LinkedIn Profile</a>
@@ -35,7 +35,7 @@
 
   <section class="skills-section">
     <h2 id="skills-toggle" class="collapsible-header">
-        <span>▾</span> Want to know how I created and deployed this site?
+        <span>>🔒</span> Want to know how I created and deployed this site?
     </h2>
     <div class="skill-grid">
         <div class="skill-row">
@@ -51,8 +51,10 @@
             <div class="skill-desc">Containerized the Django application using Docker, creating reusable and consistent environments for deployments.</div>
         </div>
         <div class="skill-row">
-            <div class="skill-title">Terraform</div>
-            <div class="skill-desc">Used Terraform to provision AWS infrastructure as code — including VPCs, subnets, EC2 instances, security groups, and other managed services.</div>
+            <div class="skill-title">GitHub</div>
+            <div class="skill-desc">Implemented a GitHub Actions workflow that automatically builds the Docker image for the Django application on every push 
+                to the main branch. The workflow authenticates with AWS, pushes the built image to Amazon ECR,
+                and then uses AWS Systems Manager to remotely deploy and run the container on an EC2 instance.</div>
         </div>
         <div class="skill-row">
             <div class="skill-title">Django</div>

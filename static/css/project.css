@@ -63,10 +63,9 @@ html, body {
 
 .project-img {
   width: 40%;
+  height: auto;
   object-fit: cover;
-  height: 100%;
 }
-
 .project-desc {
   padding: 1.5rem;
   width: 60%;
