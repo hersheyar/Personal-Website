@@ -27,4 +27,3 @@ EXPOSE 8080
 
 # Default command
 CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8080"]
-
