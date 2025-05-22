@@ -18,18 +18,6 @@ body {
   background: transparent;
 }
 
-@media (min-width: 640px) {
-  #menu-toggle {
-    display: none;
-  }
-
-  .hamburger {
-    display: none;
-  }
-
-}
-
-
 .header-left-side,
 .header-right-side {
   flex: 1;

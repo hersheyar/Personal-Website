@@ -8,6 +8,9 @@ html, main {
     url('/static/img/background-1.jpg') center center / cover no-repeat fixed;
   background-attachment: fixed;
 }
+html {
+  font-size: clamp(13px, 1.6vw, 16px);
+}
 
 .profile-header h1,
 .profile-header h2,
@@ -16,144 +19,142 @@ html, main {
 .skill-boxes span {
   color: var(--text-color);
 }
-
-@media (min-width: 1025px) {
-  .profile-section {
-    display: flex;
-    width: 100%;
-    height: 65vh;
-  }
-
-  .profile-image {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .profile-image img {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #102e59;
-  }
-
-  .profile-text {
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 0rem 8rem;
-    color: var(--text-color);
-    padding-left: 0px;
-  }
-
-  .profile-header {
-    align-self: flex-start;
-    border: 2px solid #808080;
-    border-radius: 8px;
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-
-  .profile-header h1 {
-    font-size: 2.25rem;
-    margin: 0;
-  }
-
-  .profile-header h2 {
-    font-size: 1.75rem;
-    margin-top: 0.5rem;
-  }
-
-  .profile-header p {
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    line-height: 1.6;
-  }
-
-  .collapsible-header {
-    transition: background-color 0.3s ease, color 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-  }
-
-  .collapsible-header:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--button-bg);
-  }
-
-  .collapsible-header span {
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  .collapsible-header:hover span {
-    color: var(--button-bg);
-    transform: scale(1.2);
-  }
-
-  .skills-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--text-color);
-    text-align: center;
-    margin-top: 1rem;
-  }
-
-  .skills-section h2 {
-    border-bottom: 2px solid var(--button-bg)
-  }
-
-  .skills-section h3 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .skill-grid {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    width: 90%;
-    max-width: 1000px;
-    margin: 2rem auto;
-  }
-
-  .skill-row {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 1rem;
-    background-color: rgba(0, 0, 0, 0.8); /* Transparent black */
-    padding: 1.25rem 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-    color: var(--text-color);
-    backdrop-filter: blur(4px);
-    border: 1px solid #8c8b8b;
-  }
-
-  .skill-title {
-    font-weight: bold;
-    font-size: 1.25rem;
-    align-self: center;
-    color: var(--text-color);
-  }
-
-  .skill-desc {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
+.skill-row {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  color: var(--text-color);
+  backdrop-filter: blur(4px);
+  border: 1px solid #8c8b8b;
+}
 
 
-  .profile-header .link-boxes {
-    margin-top: 1rem;
-  }
+.profile-section {
+  display: flex;
+  width: 100%;
+  height: 65vh;
+}
 
-  .profile-header .link-boxes .link-button {
-    font-size: .89rem;
-    padding: .5rem 1.2rem;
-  }
+.profile-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #102e59;
+}
+
+.profile-text {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0rem 8rem;
+  color: var(--text-color);
+  padding-left: 0px;
+}
+
+.profile-header {
+  align-self: flex-start;
+  border: 2px solid #808080;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.profile-header h1 {
+  font-size: 2.25rem;
+  margin: 0;
+}
+
+.profile-header h2 {
+  font-size: 1.75rem;
+  margin-top: 0.5rem;
+}
+
+.profile-header p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+.collapsible-header {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+.collapsible-header:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--button-bg);
+}
+
+.collapsible-header span {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.collapsible-header:hover span {
+  color: var(--button-bg);
+  transform: scale(1.2);
+}
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.skills-section h2 {
+  border-bottom: 2px solid var(--button-bg)
+}
+
+.skills-section h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.skill-grid {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.skill-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  align-self: center;
+  color: var(--text-color);
+}
+
+.skill-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+.profile-header .link-boxes {
+  margin-top: 1rem;
+}
+
+.profile-header .link-boxes .link-button {
+  font-size: .89rem;
+  padding: .5rem 1.2rem;
 }
 
 
@@ -231,4 +232,130 @@ section h1 {
   border-color: var(--text-color);
 }
 
+
+/* Responsive adjustments for devices under 1024px */
+
+@media (max-width: 1023px) {
+  html {
+    font-size: clamp(13px, 1.4vw, 15px);
+    background-attachment: scroll;
+  }
+
+  .profile-image img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .profile-text {
+    padding: 0 1.5rem;
+  }
+
+  .profile-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .profile-header h2 {
+    font-size: 1.35rem;
+  }
+
+  .profile-header p,
+  .skill-desc,
+  .page-section p,
+  .page-section li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .skill-title {
+    font-size: 1.1rem;
+    word-break: break-word;
+  }
+
+  .skill-row {
+    grid-template-columns: 1fr 2.5fr;
+    padding: 1rem 1.25rem;
+    gap: 0.75rem;
+  }
+
+  .skill-grid,
+  .page-section {
+    max-width: 95vw;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  section h1 {
+    font-size: 1.5rem;
+  }
+
+  .link-button,
+  .nav-options a {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  body, h1, h2, h3, p, span, li, a {
+    color: var(--text-color, #fff);
+  }
+}
+
+/* Additional scaling for very small devices under 650px */
+@media (max-width: 650px) {
+  .profile-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .skill-title {
+    font-size: 1rem;
+  }
+
+  .skill-desc,
+  .profile-header p,
+  .page-section p,
+  .page-section li {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .skill-row {
+    grid-template-columns: 1fr 2fr;
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .link-button,
+  .nav-options a {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+/* Ensure .skill-row always stays horizontal */
+.skill-row {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  color: var(--text-color);
+  backdrop-filter: blur(4px);
+  border: 1px solid #8c8b8b;
+  word-break: break-word;
+}
+
+.skill-title,
+.skill-desc {
+  word-break: break-word;
+}
 

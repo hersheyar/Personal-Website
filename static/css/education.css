@@ -147,3 +147,47 @@ html {
   text-decoration: underline;
   margin-top: auto;
 }
+
+/* Additional scaling for very small devices under 650px */
+@media (max-width: 650px) {
+  .education-section {
+    padding: 1rem 0.75rem;
+  }
+
+  .education-section h1,
+  .other-education-heading {
+    font-size: 1.3rem;
+    margin: 1rem 0 0.75rem;
+  }
+
+  .education-cards,
+  .experience-cards {
+    gap: 1rem;
+  }
+
+  .education-card,
+  .education-norwich-card,
+  .education-sdgku-card,
+  .education-jh-card {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .education-card h2,
+  .education-norwich-card h2,
+  .education-sdgku-card h2,
+  .education-jh-card h2 {
+    font-size: 1rem;
+  }
+
+  .education-card p,
+  .education-norwich-card p,
+  .education-sdgku-card p,
+  .education-jh-card p {
+    font-size: 0.85rem;
+  }
+
+  .read-more {
+    font-size: 0.75rem;
+  }
+}
