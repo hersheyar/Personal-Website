@@ -39,6 +39,11 @@
     </h2>
     <div class="skill-grid">
         <div class="skill-row">
+            <div class="skill-title">CICD Pipeline</div>
+            <div class="skill-desc">Used GitHub Action to automatically build (containerize) and deploy the container image to AWS ECR and trigger EC2 via SSM to pull the latest docker image.
+                This is triggered when I push the code to Github. </div>
+        </div>
+        <div class="skill-row">
             <div class="skill-title">AWS</div>
             <div class="skill-desc">Used AWS for hosting and managing infrastructure, including EC2 for compute, ECR for container images, and associated networking and IAM configurations.</div>
         </div>
@@ -52,9 +57,7 @@
         </div>
         <div class="skill-row">
             <div class="skill-title">GitHub</div>
-            <div class="skill-desc">Implemented a GitHub Actions workflow that automatically builds the Docker image for the Django application on every push 
-                to the main branch. The workflow authenticates with AWS, pushes the built image to Amazon ECR,
-                and then uses AWS Systems Manager to remotely deploy and run the container on an EC2 instance.</div>
+            <div class="skill-desc">This is my repository and I use GitHub Actions as well as hold aws secrets for the CICD Pipeline.</div>
         </div>
         <div class="skill-row">
             <div class="skill-title">Django</div>
