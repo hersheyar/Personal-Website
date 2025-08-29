@@ -2,13 +2,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Skills toggle functionality
     const skillsToggle = document.getElementById('skills-toggle');
     const skillGrid = document.getElementById('skill-grid');
-    const lockIcon = skillsToggle.querySelector('span');
+    const lockIcon = skillsToggle ? skillsToggle.querySelector('span') : null;
 
     if (skillsToggle && skillGrid && lockIcon) {
         skillsToggle.addEventListener('click', () => {
             const isVisible = skillGrid.style.display !== 'none';
             skillGrid.style.display = isVisible ? 'none' : 'grid';
             lockIcon.textContent = isVisible ? '🔒' : '🔓';
+
+            if (!isVisible) {
+                // Scroll to the skill grid when showing
+                skillGrid.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            } else {
+                // Optional: scroll back up to the toggle when hiding
+                skillsToggle.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
         });
 
         // Start with skills hidden
