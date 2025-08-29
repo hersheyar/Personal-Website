@@ -1,120 +1,157 @@
-
-
-/* Background for the entire page */
-html {
-  background: linear-gradient(rgba(21, 46, 80, 0.85), rgba(21, 46, 80, 0.85)),
-              url('/static/img/norwichwebpage.jpg') center top / cover no-repeat fixed;
-  color: var(--text-color);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Norwich Page Background */
+body {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('/static/img/norwichwebpage.jpg') center center / cover no-repeat fixed;
+    min-height: 100vh;
 }
 
-/* Main content layout */
+/* Keep your existing Norwich page styles but enhance containers */
 .norwich-page {
-  padding: 3rem 1rem;
-  min-height: 100vh;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Header & Title Block */
 .norwich-header {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.grad-photo {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--button-bg);
-}
-
-.norwich-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text-color);
-  margin: 0;
+    margin-bottom: 3rem;
 }
 
 .title-block {
-  max-width: 1000px;
+    text-align: center;
 }
 
+.norwich-title {
+    /* Keep your existing title styles */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+}
 
-/* Subheading & Icon */
 .norwich-subheading {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  justify-content: center;
-  margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .icon-img {
-  width: 40px;
-  height: 40px;
+    width: 40px;
+    height: 40px;
 }
 
 .norwich-heading {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--text-color);
-  text-align: center;
-  border-bottom: 2px solid var(--button-bg);
-  padding-bottom: 0.4rem;
-  margin: 2rem 0 2rem;
+    /* Keep your existing heading styles */
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 
-/* Course cards */
+/* Enhanced Course Grid with Glassmorphism */
 .norwich-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0;
 }
 
 .course-card {
-  background: linear-gradient(
-    135deg,
-    rgba(98, 179, 226, 0.25),
-    rgba(115, 99, 223, 0.25),
-    rgba(145, 239, 255, 0.25),
-    rgba(215, 152, 255, 0.25)
-  );
-  backdrop-filter: blur(6px);
-  border: 1.5px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  padding: 1.5rem;
-  color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Add glassmorphism effects while keeping your colors */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Shimmer effect on hover */
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+}
+
+.course-card:hover::before {
+    left: 100%;
 }
 
 .course-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-  border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .course-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin: 0;
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    /* Keep your existing text styles but ensure proper layering */
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    line-height: 1.4;
 }
 
-/* Footer image (optional) */
-.norwich-footer-img {
-  margin-top: 3rem;
-  text-align: center;
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .norwich-page {
+        padding: 1rem;
+    }
+
+    .norwich-title {
+        font-size: 2rem;
+    }
+
+    .norwich-heading {
+        font-size: 1.5rem;
+    }
+
+    .norwich-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .course-card {
+        padding: 1.2rem;
+    }
+
+    .norwich-subheading {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .icon-img {
+        width: 35px;
+        height: 35px;
+    }
 }
 
-.norwich-web-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 2px solid #3d6cac;
+@media (max-width: 480px) {
+    .norwich-title {
+        font-size: 1.8rem;
+    }
+
+    .norwich-heading {
+        font-size: 1.3rem;
+    }
+
+    .course-card {
+        padding: 1rem;
+    }
+
+    .course-title {
+        font-size: 0.9rem;
+    }
 }

@@ -3,28 +3,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Portfolio{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Andrew Hershey - Cloud Software Engineer{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-
     {% block extra_head %}{% endblock %}
 </head>
 <body>
-
-    <header>
-        <div class="navbar">
-            <div class="header-right-side">
-                <div class="nav-options">
-                    <a href="{% url 'home' %}">Home</a>
-                    <a href="{% url 'experience' %}">Experience</a>
-                    <a href="{% url 'education' %}">Education</a>
-                    <a href="{% url 'project_lists' %}">Projects</a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                <li><a href="{% url 'experience' %}" class="nav-link">Experience</a></li>
+                <li><a href="{% url 'education' %}" class="nav-link">Education</a></li>
+                <li><a href="{% url 'project_lists' %}" class="nav-link">Projects</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-            </div>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    {% block content %}{% endblock %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navMenu = document.getElementById('nav-menu');
+
+            // ENSURE MENU STARTS CLOSED
+            if (navMenu) {
+                navMenu.classList.remove('active');
+            }
+            if (mobileMenuBtn) {
+                mobileMenuBtn.classList.remove('active');
+            }
+
+            // TOGGLE MENU ON BUTTON CLICK
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('Menu button clicked'); // Debug
+                    
+                    mobileMenuBtn.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    
+                    console.log('Menu active:', navMenu.classList.contains('active')); // Debug
+                });
+
+                // CLOSE MENU WHEN CLICKING ON LINKS
+                document.querySelectorAll('.nav-link').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        mobileMenuBtn.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+
+                // CLOSE MENU WHEN CLICKING OUTSIDE
+                document.addEventListener('click', function(e) {
+                    if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                        mobileMenuBtn.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+
+            // NAVBAR SCROLL EFFECT
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (navbar) {
+                    if (window.scrollY > 100) {
+                        navbar.style.background = 'rgba(62, 39, 35, 0.8)';
+                    } else {
+                        navbar.style.background = 'rgba(62, 39, 35, 0.4)';
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

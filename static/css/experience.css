@@ -1,212 +1,265 @@
-/* ================== EXPERIENCE SECTION ================== */
-html, main {
-  height: 100%;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/static/img/background-1.jpg') center center / cover no-repeat;
+/* Experience Page Background */
+body {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('/static/img/background-1.jpg') center center / cover no-repeat fixed;
+    min-height: 100vh;
 }
 
+/* Experience Section Styles */
 .experience-section {
-  padding: 2rem 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    animation: fadeIn 0.8s ease-out;
 }
 
-.experience-section h1,
-.other-experience-heading {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--text-color);
-  border-bottom: 2px solid var(--button-bg);
-  padding-bottom: 0.3rem;
-  text-align: center;
-  margin: 2rem 0 1.5rem;
+.experience-section h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #A2BD87FF;
+    position: relative;
 }
 
-.other-experience-heading {
-  margin-top: 4rem;
+.experience-section h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--sage-green);
+    border-radius: 2px;
 }
 
+/* Experience Cards Grid */
 .experience-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
 }
 
-/* ================== SHARED CARD STYLES ================== */
-
-.experience-card,
+/* Card Base Styles with Glassmorphism */
 .experience-cloud-card,
 .experience-aws-card,
 .experience-dev-card,
 .experience-navy-card {
-  position: relative;
-  overflow: hidden;
-  color: #ffffff;
-  border: 1px solid #ffffff;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 1;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
 }
 
-.experience-card:hover,
-.experience-cloud-card:hover,
-.experience-aws-card:hover,
-.experience-dev-card:hover,
-.experience-navy-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
-}
-
-/* ================== BACKGROUND IMAGES ================== */
-
-/* ================== EXPERIENCE SECTION ================== */
-html, main {
-  height: 100%;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/static/img/background-1.jpg') center center / cover no-repeat;
-}
-
-.experience-section {
-  padding: 2rem 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.experience-section h1,
-.other-experience-heading {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--text-color);
-  border-bottom: 2px solid var(--button-bg);
-  padding-bottom: 0.3rem;
-  text-align: center;
-  margin: 2rem 0 1.5rem;
-}
-
-.other-experience-heading {
-  margin-top: 4rem;
-}
-
-.experience-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-@media (min-width: 768px) {
-  .experience-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ================== SHARED CARD STYLES ================== */
-
-.experience-card,
-.experience-cloud-card,
-.experience-aws-card,
-.experience-dev-card,
-.experience-navy-card {
-  position: relative;
-  overflow: hidden;
-  color: #ffffff;
-  border: 1px solid #ffffff;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 1;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.experience-card:hover,
-.experience-cloud-card:hover,
-.experience-aws-card:hover,
-.experience-dev-card:hover,
-.experience-navy-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
-}
-
-/* ================== BACKGROUND IMAGES ================== */
-
-.experience-cloud-card::before {
-  background: url('/static/img/awscloudimage.jpg') center 50% / cover no-repeat;
-}
-
-.experience-aws-card::before {
-  background: url('/static/img/AWS_Cloud.jpg') center 50% / cover no-repeat;
-}
-
-.experience-dev-card::before {
-  background: url('/static/img/animated-flow-blending-1.gif') center 50% / cover no-repeat;
-}
-
-.experience-navy-card::before {
-  background: url('/static/img/dive_img.jpg') center 50% / cover no-repeat;
-}
-
+/* Shimmer effect */
 .experience-cloud-card::before,
 .experience-aws-card::before,
 .experience-dev-card::before,
 .experience-navy-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.4;
-  z-index: -1;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  pointer-events: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(156, 175, 136, 0.1), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
 }
 
 .experience-cloud-card:hover::before,
 .experience-aws-card:hover::before,
 .experience-dev-card:hover::before,
 .experience-navy-card:hover::before {
-  opacity: 1.0;
-  transform: scale(1.03);
+    left: 100%;
 }
 
-/* ================== TEXT STYLES ================== */
+/* Card hover effects */
+.experience-cloud-card:hover,
+.experience-aws-card:hover,
+.experience-dev-card:hover,
+.experience-navy-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--sage-green);
+}
 
-.experience-card h2,
+/* Card background images with overlay */
+.experience-cloud-card {
+    background-image:
+        linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)),
+        url('/static/img/awscloudimage.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.experience-aws-card {
+    background-image:
+        linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)),
+        url('/static/img/AWS_Cloud.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.experience-dev-card {
+    background-image:
+        linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)),
+        url('/static/img/animated-flow-blending-1.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.experience-navy-card {
+    background-image:
+        linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)),
+        url('/static/img/dive_img.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Typography */
 .experience-cloud-card h2,
 .experience-aws-card h2,
 .experience-dev-card h2,
 .experience-navy-card h2 {
-  font-size: 1.3rem;
-  margin: 0;
-  color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--sage-green);
+    margin-bottom: 0.5rem;
+    z-index: 2;
+    position: relative;
 }
 
-.experience-card p,
-.experience-cloud-card p,
-.experience-aws-card p,
-.experience-dev-card p,
-.experience-navy-card p {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin: 0 0 0.5rem 0;
+.experience-cloud-card h4,
+.experience-aws-card h4,
+.experience-dev-card h4,
+.experience-navy-card h4 {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    z-index: 2;
+    position: relative;
 }
 
-.read-more {
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: underline;
-  margin-top: auto;
+.experience-cloud-card .read-more,
+.experience-aws-card .read-more,
+.experience-dev-card .read-more,
+.experience-navy-card .read-more {
+    font-size: 0.9rem;
+    color: var(--sage-green);
+    font-weight: 600;
+    text-decoration: underline;
+    margin-top: auto;
+    z-index: 2;
+    position: relative;
+}
+
+.experience-cloud-card .read-more:hover,
+.experience-aws-card .read-more:hover,
+.experience-dev-card .read-more:hover,
+.experience-navy-card .read-more:hover {
+    color: var(--text-primary);
+}
+
+/* Other Experience Heading */
+.other-experience-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 4rem 0 2rem;
+    color: var(--sage-green);
+    position: relative;
+}
+
+.other-experience-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: var(--sage-green);
+    border-radius: 1px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .experience-section {
+        padding: 1rem;
+    }
+
+    .experience-section h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .experience-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .experience-cloud-card,
+    .experience-aws-card,
+    .experience-dev-card,
+    .experience-navy-card {
+        padding: 2rem;
+        min-height: auto;
+    }
+
+    .other-experience-heading {
+        font-size: 1.5rem;
+        margin: 3rem 0 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-section {
+        padding: 0.5rem;
+    }
+
+    .experience-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .experience-cloud-card,
+    .experience-aws-card,
+    .experience-dev-card,
+    .experience-navy-card {
+        padding: 1.5rem;
+    }
+
+    .experience-cloud-card h2,
+    .experience-aws-card h2,
+    .experience-dev-card h2,
+    .experience-navy-card h2 {
+        font-size: 1.2rem;
+    }
 }

@@ -1,193 +1,203 @@
-/* ================== EDUCATION SECTION ================== */
-
-html {
-  font-size: 16px;
-  height: 100%;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/static/img/background-1.jpg') center center / cover no-repeat;
+:root {
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --primary-gradient: linear-gradient(135deg, #a2bd87, #87c0cd);
+    --sage-green: #A2BD87;
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --shadow-xl: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Page Background */
+body {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('/static/img/climate.jpg') center center / cover no-repeat fixed;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--text-primary);
+}
+
+/* Section Layout */
 .education-section {
-  padding: 2rem 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    animation: fadeIn 0.8s ease-out;
 }
 
-.education-section h1,
-.other-education-heading {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--text-color);
-  border-bottom: 2px solid var(--button-bg);
-  padding-bottom: 0.3rem;
-  text-align: center;
-  margin: 2rem 0 1.5rem;
+/* Section Title */
+.education-section h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--sage-green);
+    position: relative;
 }
 
-.other-education-heading {
-  margin-top: 4rem;
+.education-section h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--sage-green);
+    border-radius: 2px;
 }
 
-.education-cards,
-.experience-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+/* Education Cards Grid */
+.education-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
 }
 
-@media (min-width: 768px) {
-  .education-cards,
-  .experience-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* Education Card Base */
+.education-card {
+    position: relative;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
 }
 
-/* ================== SHARED CARD STYLES ================== */
-
-.education-card,
-.education-norwich-card,
-.education-sdgku-card,
-.education-jh-card {
-  position: relative;
-  overflow: hidden;
-  color: #ffffff;
-  border: 1px solid #ffffff;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.75rem;
-  z-index: 1;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.education-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(162, 189, 135, 0.12), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
 }
 
-.education-card:hover,
-.education-norwich-card:hover,
-.education-sdgku-card:hover,
-.education-jh-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+.education-card:hover::before {
+    left: 100%;
 }
 
-/* ================== BACKGROUND IMAGES ================== */
-
-.education-norwich-card::before {
-  background: url('/static/img/norwich.jpg') center 50% / cover no-repeat;
+.education-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--sage-green);
 }
 
-.education-sdgku-card::before {
-  background: url('/static/img/sdgku.jpg') center 5% / cover no-repeat;
+/* Card Text */
+.education-card h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--sage-green);
+    margin-bottom: 1rem;
+    z-index: 2;
+    position: relative;
 }
 
-.education-jh-card::before {
-  background: url('/static/img/jh.jpg') center 50% / cover no-repeat;
+.education-card .degree {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    z-index: 2;
+    position: relative;
 }
 
-.education-norwich-card::before,
-.education-sdgku-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.6;
-  z-index: -1;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  pointer-events: none;
-}
-
-.education-jh-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.4;
-  z-index: -1;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  pointer-events: none;
-}
-
-
-.education-norwich-card:hover::before,
-.education-sdgku-card:hover::before {
-  opacity: 1.0;
-  transform: scale(1.03);
-}
-.education-jh-card:hover::before {
-  opacity: 1.0;
-  transform: scale(1.03);
-}
-
-/* ================== TEXT STYLES ================== */
-
-.education-card h2,
-.education-norwich-card h2,
-.education-sdgku-card h2,
-.education-jh-card h2 {
-  font-size: 1.3rem;
-  margin: 0;
-  color: #ffffff;
-}
-
-.education-card p,
-.education-norwich-card p,
-.education-sdgku-card p,
-.education-jh-card p {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin: 0 0 0.5rem 0;
-}
-
-.read-more {
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: underline;
-  margin-top: auto;
-}
-
-/* Additional scaling for very small devices under 650px */
-@media (max-width: 650px) {
-  .education-section {
-    padding: 1rem 0.75rem;
-  }
-
-  .education-section h1,
-  .other-education-heading {
-    font-size: 1.3rem;
-    margin: 1rem 0 0.75rem;
-  }
-
-  .education-cards,
-  .experience-cards {
-    gap: 1rem;
-  }
-
-  .education-card,
-  .education-norwich-card,
-  .education-sdgku-card,
-  .education-jh-card {
-    padding: 1rem;
-    gap: 0.5rem;
-  }
-
-  .education-card h2,
-  .education-norwich-card h2,
-  .education-sdgku-card h2,
-  .education-jh-card h2 {
+.education-card .date {
     font-size: 1rem;
-  }
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    z-index: 2;
+    position: relative;
+}
 
-  .education-card p,
-  .education-norwich-card p,
-  .education-sdgku-card p,
-  .education-jh-card p {
-    font-size: 0.85rem;
-  }
+/* Background Images for Specific Cards */
+.education-norwich-card {
+    background-image:
+        linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)),
+        url('/static/img/norwich.jpg');
+    background-size: cover;
+    background-position: center;
+}
 
-  .read-more {
-    font-size: 0.75rem;
-  }
+.education-sdgku-card {
+    background-image:
+        linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)),
+        url('/static/img/sdgku.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.education-sdgku-ios-card {
+    background-image:
+        linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)),
+        url('/static/img/sdgku.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .education-section {
+        padding: 1rem;
+    }
+
+    .education-section h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .education-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .education-card {
+        padding: 2rem;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .education-section {
+        padding: 0.5rem;
+    }
+
+    .education-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .education-card {
+        padding: 1.5rem;
+    }
+
+    .education-card h2 {
+        font-size: 1.3rem;
+    }
 }

@@ -12,33 +12,64 @@
 
   <div class="projects-header">
     <h1 class="projects-title">Projects</h1>
-    <p class="projects-subtitle">This is a selection of the things I've built.
-    The list is not long as I spend alot of my time learning to be more useful at work.</p>
   </div>
 
   <div class="project-grid">
+
+    <!-- Project 1 -->
     <div class="project-card">
-      <img src="{% static 'img/awsproj.png' %}" alt="Project Screenshot 1" class="project-img">
+      <img src="{% static 'img/django.png' %}" alt="Project Screenshot 2" class="project-img">
+      <div class="project-desc">
+        <h3>This Django Website Hosted in AWS</h3>
+        <p>
+          This is my final project for class, and I chose to build a personal website as a capstone. What makes this project special
+          is how it’s hosted. The site is deployed using GitHub Actions, which automates Docker image builds and pushes to Amazon ECR,
+          with the container hosted on an EC2 instance.
+        </p>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="{% static 'img/CI_CDproject.png' %}" alt="Project Screenshot 3" class="project-img">
+      <div class="project-desc">
+        <h3>CI/CD Architecture</h3>
+        <p>
+          This diagram illustrates a CI/CD pipeline I worked on that connects GitLab and Bitbucket, 
+      integrates multiple security scanning tools, retrieves dependencies from Artifactory, 
+      and automates deployments across both on-premises environments and AWS. 
+        </p>
+      </div>
+    </div>
+    
+    <!-- Project 3 -->
+    <div class="project-card">
+      <img src="{% static 'img/migrate.png' %}" alt="Project Screenshot 1" class="project-img">
       <div class="project-desc">
         <h3>Migration Architecture</h3>
-        <p>This project showcases the architecture of what I helped create and configure in Our AWS Cloud Environment
-           I stood up EC2 instances, configured security groups, IAM ROLES etc. I then configured the linux servers to host Java Web Applications
-            to mimic on prem architecture for compatible functionality. Everything you see in the Architecture I helped Configure.</p>
+        <p>
+          This project showcases the architecture of what I helped create and configure in our AWS Cloud Environment.
+          I stood up EC2 instances, configured security groups and IAM roles, and set up Linux servers to host Java web
+          applications—mimicking on-prem architecture for compatible functionality.
+        </p>
       </div>
-    </div>
+    </div>  
+      
 
+    <!-- Project 4 -->
     <div class="project-card">
-      <img src="{% static 'img/personalweb.png' %}" alt="Project Screenshot 2" class="project-img">
+      <img src="{% static 'img/iphone.png' %}" alt="Project Screenshot 4" class="project-img">
       <div class="project-desc">
-        <h3>This DJANGO Website Hosted in AWS</h3>
-        <p>This is my final project for class, and I chose to build a personal website as a capstone. What makes this project special 
-            is how it’s hosted, it became more of a DevOps exercise than just a fullstack build. The site is deployed using GitHub Actions, 
-            which automates the Docker image build and pushes it to Amazon ECR, with the container hosted on an EC2 instance.</p>
+        <h3>Restaurant Menu & Reservation App</h3>
+        <p>
+          This project showcases an iOS application I developed featuring a restaurant menu and reservation system. 
+      The UI includes an interactive menu for browsing dishes and a reservation interface for booking tables, 
+      designed to provide a simple and intuitive user experience on mobile devices.
+        </p>
       </div>
     </div>
-
-    <!-- Repeat for more projects -->
 
   </div>
+
 </main>
 {% endblock %}

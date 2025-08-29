@@ -5,6 +5,9 @@ from django.core.mail import send_mail
 def home(request):
     return render(request, 'pages/home.html')
 
+def newhome(request):
+    return render(request, 'pages/newhome.html')
+
 def projects(request):
     return render(request, 'pages/projects.html')
 
@@ -16,9 +19,6 @@ def experience_detail(request, slug):
 
 def education(request):
     return render(request, 'pages/education.html')
-
-def education_detail(request, slug):
-    return render(request, f'education_details/{slug}.html')
 
 def contact(request):
     if request.method == "POST":
